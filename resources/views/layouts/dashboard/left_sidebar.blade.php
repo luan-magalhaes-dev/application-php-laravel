@@ -27,14 +27,26 @@
 					<span>@lang('system.dashboard')</span>
 				</a>
 			</li>
-			<li class="{{ menuActive(['users']) }}">
+			<li class="{{ menuActive(['pacientes']) }}">
+				<a href="{{ route('dashboard.patients.index') }}">
+					<em class="zmdi zmdi-account"></em>
+					<span>@lang('system.patients')</span>
+				</a>
+			</li>
+			<li class="{{ menuActive(['medicos']) }}">
+				<a href="{{ route('dashboard.doctors.index') }}">
+					<em class="zmdi zmdi-male-alt"></em>
+					<span>@lang('system.doctors')</span>
+				</a>
+			</li>
+			<li class="{{ menuActive(['usuarios']) }}">
 				<a href="javascript:void(0);"
 				   class="menu-toggle">
 					<em class="zmdi zmdi-lock"></em>
 					<span>@lang('system.authentication')</span>
 				</a>
 				<ul class="ml-menu">
-					<li class="{{ menuActive(['users']) }}">
+					<li class="{{ menuActive(['usuarios']) }}">
 						<a href="{{ route('dashboard.users.index') }}">
 							<p>@lang('system.users')</p>
 						</a>

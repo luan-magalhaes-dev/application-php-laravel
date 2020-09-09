@@ -7,7 +7,7 @@
           href="{{ asset('themes/dashboard/css/style.min.css') }}">
 </head>
 
-<body class="theme-orange theme-white">
+<body class="theme-green theme-dark">
 @include('layouts.dashboard.loader')
 <div class="overlay"></div>
 @include('layouts.dashboard.left_sidebar')
