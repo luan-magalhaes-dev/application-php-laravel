@@ -1,0 +1,45 @@
+version: "3.1"
+services:
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+
+  mysql:
+    image: mysql:5.7
+    container_name: applicationPHPLaravel-mysql
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - applicationPHPLaravel-dbdata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=applicationPHPLaravel
+      - MYSQL_DATABASE=applicationPHPLaravel
+      - MYSQL_USER=applicationPHPLaravel
+      - MYSQL_PASSWORD=applicationPHPLaravel
+    ports:
+      - "3310:3306"
+
+  webserver:
+    image: nginx:alpine
+    container_name: applicationPHPLaravel-webserver
+    working_dir: /application
+    volumes:
+        - ../.:/application
+        - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8005:80"
+    links:
+      - mysql
+
+  php-fpm:
+    build: php-fpm
+    container_name: applicationPHPLaravel-php-fpm
+    working_dir: /application
+    volumes:
+      - ../.:/application
+      - ./php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
+    links:
+      - mysql
+volumes:
+  applicationPHPLaravel-dbdata:
+    driver: local

@@ -1,0 +1,2 @@
+@section('extra-styles')
+@endsection
