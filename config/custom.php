@@ -2,6 +2,6 @@
 
 return [
 	'name'      => env('APP_NAME', 'SISTEMA'),
-	'url'       => 'http://localhost:8005',
-	'url_panel' => 'http://localhost:8005/dashboard',
+	'url'       => 'http://127.0.0.1:8000',
+	'url_panel' => 'http://127.0.0.1:8000',
 ];

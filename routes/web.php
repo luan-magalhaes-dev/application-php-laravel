@@ -31,7 +31,24 @@ Route::prefix('dashboard')
 				Route::post('addresses/showByPostcode', 'Dashboard\AddressController@showByPostcode')
 					->name('address.showByPostcode');
 				
-				Route::resource('users', 'Dashboard\UserController');
+				Route::resource('usuarios', 'Dashboard\UserController', ['as' => 'users'])
+					->names([
+						'index'   => 'users.index',
+						'create'  => 'users.create',
+						'store'   => 'users.store',
+						'edit'    => 'users.edit',
+						'update'  => 'users.update',
+						'destroy' => 'users.destroy',
+					]);
+				Route::resource('pacientes', 'Dashboard\PatientController', ['as' => 'patients'])
+					->names([
+						'index'   => 'patients.index',
+						'create'  => 'patients.create',
+						'store'   => 'patients.store',
+						'edit'    => 'patients.edit',
+						'update'  => 'patients.update',
+						'destroy' => 'patients.destroy',
+					]);;
 				Route::get('unauthorized', 'Dashboard\ErrorController@error403')
 					->name('errors.403');
 			});
