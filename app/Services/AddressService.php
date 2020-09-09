@@ -30,6 +30,19 @@ class AddressService implements AddressServiceInterface
 		return $address;
 	}
 	
+	public function showByStreet($postcode, $street, $neighborhood)
+	{
+		try {
+			return $this->addressRepository
+				->where('postcode', $postcode)
+				->where('street', '%'.$street.'%', 'LIKE')
+				->where('neighborhood', '%'.$neighborhood.'%', 'LIKE')
+				->first();
+		} catch (ModelNotFoundException $e) {
+			return false;
+		}
+	}
+	
 	public function showByWhere($wheres = [])
 	{
 		$query = $this->addressRepository;
@@ -39,11 +52,10 @@ class AddressService implements AddressServiceInterface
 			}
 		}
 		try {
-			$address = $query->first();
+			return $query->first();
 		} catch (ModelNotFoundException $e) {
 			return false;
 		}
-		return $address;
 	}
 	
 	public function store()

@@ -17,13 +17,13 @@ class Address extends Model
 		'postcode',
 	];
 	
-	public function customers()
+	public function patients()
 	{
-		return $this->hasMany(Customer::class);
+		return $this->hasMany(Patient::class);
 	}
 	
-	public function suppliers()
+	public function doctors()
 	{
-		return $this->hasMany(Supplier::class);
+		return $this->hasMany(Doctor::class);
 	}
 }
