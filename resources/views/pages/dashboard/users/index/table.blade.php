@@ -46,6 +46,3 @@
 		</tbody>
 	</table>
 </div>
-<div class="justify-content-center">
-	{{ $users->links() }}
-</div>

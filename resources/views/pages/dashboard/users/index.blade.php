@@ -32,11 +32,3 @@
 		@endif
 	</div>
 @endsection
-
-@section('extra-styles')
-	<link href="{{ asset('themes/dashboard/plugins/sweetalert/sweetalert.css') }}"
-		  rel="stylesheet" />
-@endsection
-@section('extra-scripts')
-	<script src="{{ asset('themes/js-default/sweetalert.min.js') }}"></script>
-@endsection

@@ -4,7 +4,7 @@
     @include('layouts.dashboard.head')
     @yield('extra-styles')
     <link rel="stylesheet"
-          href="{{ asset('themes/dashboard/css/style.min.css') }}">
+          href="{{ asset('css/app.css') }}">
 </head>
 
 <body class="theme-green theme-dark">

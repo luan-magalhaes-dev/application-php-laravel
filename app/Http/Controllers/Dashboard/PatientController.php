@@ -23,7 +23,7 @@ class PatientController extends Controller
 	public function index()
 	{
 		$patients = $this->patientService
-			->index(15);
+			->index();
 		
 		return view('pages.dashboard.patients.index')
 			->with(compact([

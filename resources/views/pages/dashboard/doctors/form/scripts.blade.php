@@ -1,5 +1,4 @@
 @section('extra-scripts')
-	<script src="{{ asset('themes/js-default/inputMask-5x.js') }}"></script>
 	<script src="{{ asset('themes/dashboard/plugins/select2/select2.min.js') }}"></script>
 	<script src="{{ asset('js/postcode.js') }}"></script>
 	<script type="text/javascript">
