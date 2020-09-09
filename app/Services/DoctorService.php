@@ -91,6 +91,9 @@ class DoctorService implements DoctorServiceInterface
 		if (!is_null(request('complement'))) {
 			$values['complement'] = request('complement');
 		}
+		if (!is_null(request('schedules')) && count(request('schedules'))) {
+			$values['schedules'] = request('schedules');
+		}
 		return $values;
 	}
 	

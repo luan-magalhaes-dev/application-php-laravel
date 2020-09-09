@@ -84,6 +84,12 @@ return [
 	'doctors'               => 'Médicos',
 	'sex'                   => 'Sexo',
 	'crm'                   => 'CRM',
+	'scheduling'            => 'Agendamento',
+	'schedules'             => 'Horários',
+	'days_week'             => 'Dias da semana',
+	'time_start'            => 'Horário inicial',
+	'time_end'              => 'Horário Final',
+	'time_interval'         => 'Intervalo de horário',
 	'403'                   => [
 		'title' => 'Erro 403: Permissão negada!',
 		'msg'   => 'Desculpe.Você não tem permissão de acessar esta página!',
