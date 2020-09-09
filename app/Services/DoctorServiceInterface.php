@@ -4,7 +4,7 @@ namespace App\Services;
 
 interface DoctorServiceInterface
 {
-	public function index($paginate);
+	public function index();
 	
 	public function store();
 	

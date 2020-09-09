@@ -6,3 +6,9 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import 'resources/js/themes/dashboard/scss/main';
+
+@import 'resources/js/themes/dashboard/plugins/sweetalert/sweetalert';
+
+@import 'resources/js/themes/dashboard/plugins/jquery-datatable/dataTables.bootstrap4.min';

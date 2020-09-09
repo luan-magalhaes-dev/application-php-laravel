@@ -15,11 +15,11 @@ class PatientService implements PatientServiceInterface
 		$this->patientRepository = $patientRepository;
 	}
 	
-	public function index($paginate)
+	public function index()
 	{
 		$patients = $this->patientRepository
 			->orderBy('id', 'DESC')
-			->paginate($paginate);
+			->get();
 		
 		if (!count($patients)) {
 			return false;
