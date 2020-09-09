@@ -80,9 +80,10 @@ return [
 	'back'                  => 'Voltar',
 	'patient'               => 'Paciente',
 	'patients'              => 'Pacientes',
-	'doctor'                => 'Doutor',
-	'doctors'               => 'Doutores',
+	'doctor'                => 'Médico',
+	'doctors'               => 'Médicos',
 	'sex'                   => 'Sexo',
+	'crm'                   => 'CRM',
 	'403'                   => [
 		'title' => 'Erro 403: Permissão negada!',
 		'msg'   => 'Desculpe.Você não tem permissão de acessar esta página!',

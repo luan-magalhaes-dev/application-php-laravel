@@ -33,6 +33,12 @@
 					<span>@lang('system.patients')</span>
 				</a>
 			</li>
+			<li class="{{ menuActive(['medicos']) }}">
+				<a href="{{ route('dashboard.doctors.index') }}">
+					<em class="zmdi zmdi-male-alt"></em>
+					<span>@lang('system.doctors')</span>
+				</a>
+			</li>
 			<li class="{{ menuActive(['usuarios']) }}">
 				<a href="javascript:void(0);"
 				   class="menu-toggle">

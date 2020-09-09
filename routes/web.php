@@ -48,7 +48,16 @@ Route::prefix('dashboard')
 						'edit'    => 'patients.edit',
 						'update'  => 'patients.update',
 						'destroy' => 'patients.destroy',
-					]);;
+					]);
+				Route::resource('medicos', 'Dashboard\DoctorController', ['as' => 'doctors'])
+					->names([
+						'index'   => 'doctors.index',
+						'create'  => 'doctors.create',
+						'store'   => 'doctors.store',
+						'edit'    => 'doctors.edit',
+						'update'  => 'doctors.update',
+						'destroy' => 'doctors.destroy',
+					]);
 				Route::get('unauthorized', 'Dashboard\ErrorController@error403')
 					->name('errors.403');
 			});
