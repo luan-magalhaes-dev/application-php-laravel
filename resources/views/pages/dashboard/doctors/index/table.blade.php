@@ -49,6 +49,3 @@
 		</tbody>
 	</table>
 </div>
-<div class="justify-content-center">
-	{{ $doctors->links() }}
-</div>
