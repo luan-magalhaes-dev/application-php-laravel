@@ -20,7 +20,7 @@ class UserController extends Controller
 	public function index()
 	{
 		$users = $this->userService
-			->index(15);
+			->index();
 		return view('pages.dashboard.users.index')
 			->with(compact([
 				'users',

@@ -15,11 +15,11 @@ class DoctorService implements DoctorServiceInterface
 		$this->doctorRepository = $doctorRepository;
 	}
 	
-	public function index($paginate)
+	public function index()
 	{
 		$doctors = $this->doctorRepository
 			->orderBy('id', 'DESC')
-			->paginate($paginate);
+			->get();
 		
 		if (!count($doctors)) {
 			return false;

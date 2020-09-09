@@ -15,11 +15,11 @@ class UserService implements UserServiceInterface
 		$this->userRepository = $userRepository;
 	}
 	
-	public function index($paginate)
+	public function index()
 	{
 		$users = $this->userRepository
 			->orderBy('id', 'DESC')
-			->paginate($paginate);
+			->get();
 		
 		if (!count($users)) {
 			return false;

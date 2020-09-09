@@ -47,6 +47,3 @@
 		</tbody>
 	</table>
 </div>
-<div class="justify-content-center">
-	{{ $patients->links() }}
-</div>
