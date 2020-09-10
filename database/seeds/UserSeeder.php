@@ -15,11 +15,15 @@ class UserSeeder extends Seeder
 			->truncate();
 		Schema::enableForeignKeyConstraints();
 		
-		\App\Models\User::create(
-			[
-				'name'     => 'Luan Magalhães',
-				'email'    => 'luan.magalhaes.dev@gmail.com',
-				'password' => bcrypt('123456'),
-			]);
+		\App\Models\User::create([
+			'name'     => 'Luan Magalhães',
+			'email'    => 'luan.magalhaes.dev@gmail.com',
+			'password' => bcrypt('123456'),
+		]);
+		\App\Models\User::create([
+			'name'     => 'Rafael Querino',
+			'email'    => 'rafael.querino@mazzafc.tech',
+			'password' => bcrypt('123456'),
+		]);
 	}
 }

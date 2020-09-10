@@ -20319,6 +20319,7 @@ b=b.replace(/[^a-zA-Z0-9_\u00A1-\uFFFF\.,\-_ !\(\)]/g,""),(c=s(c.extension))||(c
 c?null:a.length?a.text():"":b},u=d("<textarea/>")[0];d.fn.dataTable.Buttons=m;d.fn.DataTable.Buttons=m;d(o).on("init.dt plugin-init.dt",function(a,b){if("dt"===a.namespace){var c=b.oInit.buttons||i.defaults.buttons;c&&!b._buttons&&(new m(b,c)).container()}});i.ext.feature.push({fnInit:function(a){var a=new i.Api(a),b=a.init().buttons||i.defaults.buttons;return(new m(a,b)).container()},cFeature:"B"});return m});
 
 $('.c_table').dataTable({
+    select: false,
     'language': {
         'lengthMenu': 'Exibindo _MENU_ registros por página',
         'zeroRecords': 'Nenhum registro encontrado',
