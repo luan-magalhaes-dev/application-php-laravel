@@ -23,13 +23,22 @@ class Doctor extends Model
 		'birth',
 		'sex',
 		'crm',
+		'schedules',
 	];
 	protected $hidden = [
 		'address_id',
+	];
+	protected $casts = [
+		'schedules' => 'array',
 	];
 	
 	public function address()
 	{
 		return $this->belongsTo(Address::class);
+	}
+	
+	public function schedules()
+	{
+		return $this->hasMany(Scheduling::class);
 	}
 }

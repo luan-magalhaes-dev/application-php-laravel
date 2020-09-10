@@ -154,6 +154,9 @@ return [
 		'image'        => 'Imagem',
 		'cellphone'    => 'Celular',
 		'display_name' => 'nome de exibição',
+		'doctor_id'    => 'Médico',
+		'patient_id'   => 'Paciente',
+		'schedule'     => 'Agendamento',
 	],
 
 ];

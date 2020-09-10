@@ -10,6 +10,13 @@
 		<li class="nav-item">
 			<a class="nav-link"
 			   data-toggle="tab"
+			   href="#schedules">
+				@lang('system.schedules')
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link"
+			   data-toggle="tab"
 			   href="#addresses">
 				@lang('system.address')
 			</a>
@@ -20,6 +27,11 @@
 			 class="tab-pane in active"
 			 id="general">
 			@include('pages.dashboard.doctors.form.general')
+		</div>
+		<div role="tabpanel"
+			 class="tab-pane"
+			 id="schedules">
+			@include('pages.dashboard.doctors.form.schedules')
 		</div>
 		<div role="tabpanel"
 			 class="tab-pane"

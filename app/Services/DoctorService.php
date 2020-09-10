@@ -67,6 +67,13 @@ class DoctorService implements DoctorServiceInterface
 			->deleteById($doctor->id);
 	}
 	
+	public function filter()
+	{
+		$doctors = $this->doctorRepository->filter();
+		
+		return !is_null($doctors) ? $doctors : [];
+	}
+	
 	private function values()
 	{
 		$values = [
@@ -90,6 +97,9 @@ class DoctorService implements DoctorServiceInterface
 		}
 		if (!is_null(request('complement'))) {
 			$values['complement'] = request('complement');
+		}
+		if (!is_null(request('schedules')) && count(request('schedules'))) {
+			$values['schedules'] = request('schedules');
 		}
 		return $values;
 	}

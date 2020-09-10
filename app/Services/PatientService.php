@@ -67,6 +67,13 @@ class PatientService implements PatientServiceInterface
 			->deleteById($patient->id);
 	}
 	
+	public function filter()
+	{
+		$patients = $this->patientRepository->filter();
+		
+		return !is_null($patients) ? $patients : [];
+	}
+	
 	private function values()
 	{
 		$values = [

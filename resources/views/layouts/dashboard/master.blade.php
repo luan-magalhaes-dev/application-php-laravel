@@ -7,7 +7,7 @@
           href="{{ asset('css/app.css') }}">
 </head>
 
-<body class="theme-green theme-dark">
+<body class="theme-green ">
 @include('layouts.dashboard.loader')
 <div class="overlay"></div>
 @include('layouts.dashboard.left_sidebar')

@@ -35,13 +35,12 @@ class UserService implements UserServiceInterface
 	public function show($uuid)
 	{
 		try {
-			$user = $this->userRepository
+			return $this->userRepository
 				->where('uuid', $uuid)
 				->first();
 		} catch (ModelNotFoundException $e) {
 			return false;
 		}
-		return $user;
 	}
 	
 	public function update($uuid)

@@ -36,9 +36,8 @@ class UserController extends Controller
 			]));
 	}
 	
-	public function store(
-		StoreUserRequest $request
-	) {
+	public function store(StoreUserRequest $request)
+	{
 		$request->validated();
 		
 		$this->userService
@@ -50,9 +49,8 @@ class UserController extends Controller
 		return redirect()->route('dashboard.users.index');
 	}
 	
-	public function edit(
-		$uuid
-	) {
+	public function edit($uuid)
+	{
 		$user = $this->userService
 			->show($uuid);
 		
@@ -67,9 +65,8 @@ class UserController extends Controller
 			]));
 	}
 	
-	public function update(
-		UpdateUserRequest $request, $uuid
-	) {
+	public function update(UpdateUserRequest $request, $uuid)
+	{
 		$request->validated();
 		
 		$user = $this->userService
@@ -85,9 +82,8 @@ class UserController extends Controller
 		return redirect()->route('dashboard.users.index');
 	}
 	
-	public function destroy(
-		$uuid
-	) {
+	public function destroy($uuid)
+	{
 		!$this->userService
 			->destroy($uuid)
 			?
