@@ -67,6 +67,13 @@ class DoctorService implements DoctorServiceInterface
 			->deleteById($doctor->id);
 	}
 	
+	public function filter()
+	{
+		$doctors = $this->doctorRepository->filter();
+		
+		return !is_null($doctors) ? $doctors : [];
+	}
+	
 	private function values()
 	{
 		$values = [

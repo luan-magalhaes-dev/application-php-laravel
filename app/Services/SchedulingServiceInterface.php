@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-interface DoctorServiceInterface
+interface SchedulingServiceInterface
 {
 	public function index();
 	
@@ -13,8 +13,6 @@ interface DoctorServiceInterface
 	public function update($uuid);
 	
 	public function destroy($uuid);
-	
-	public function filter();
 	
 	public function flashNotFound();
 	

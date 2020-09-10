@@ -123,4 +123,9 @@ class PatientController extends Controller
 		
 		return redirect()->route('dashboard.patients.index');
 	}
+	
+	public function filter()
+	{
+		return response()->json($this->patientService->filter());
+	}
 }

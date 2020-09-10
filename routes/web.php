@@ -4,7 +4,7 @@
 
 Route::get('/', function ()
 {
-	return redirect('dashboard/home');
+	return redirect('dashboard');
 });
 
 Route::prefix('dashboard')
@@ -16,16 +16,16 @@ Route::prefix('dashboard')
 		Route::get('/logout', function ()
 		{
 			Auth::logout();
-			return redirect('dashboard/home');
+			return redirect('dashboard');
 		});
 		Route::middleware(['auth'])
 			->group(function ()
 			{
 				Route::get('/', function ()
 				{
-					return redirect('dashboard/home');
+					return redirect('dashboard');
 				});
-				Route::get('home', 'Dashboard\DashboardController@index')
+				Route::get('', 'Dashboard\DashboardController@index')
 					->name('dashboard');
 				
 				Route::post('addresses/showByPostcode', 'Dashboard\AddressController@showByPostcode')
@@ -49,6 +49,9 @@ Route::prefix('dashboard')
 						'update'  => 'patients.update',
 						'destroy' => 'patients.destroy',
 					]);
+				Route::post('pacientes/filtrar', 'Dashboard\PatientController@filter')
+					->name('patients.json');
+				
 				Route::resource('medicos', 'Dashboard\DoctorController', ['as' => 'doctors'])
 					->names([
 						'index'   => 'doctors.index',
@@ -57,6 +60,18 @@ Route::prefix('dashboard')
 						'edit'    => 'doctors.edit',
 						'update'  => 'doctors.update',
 						'destroy' => 'doctors.destroy',
+					]);
+				Route::post('medicos/filtrar', 'Dashboard\DoctorController@filter')
+					->name('doctors.json');
+				
+				Route::resource('agendamentos', 'Dashboard\SchedulingController', ['as' => 'schedules'])
+					->names([
+						'index'   => 'schedules.index',
+						'create'  => 'schedules.create',
+						'store'   => 'schedules.store',
+						'edit'    => 'schedules.edit',
+						'update'  => 'schedules.update',
+						'destroy' => 'schedules.destroy',
 					]);
 				Route::get('unauthorized', 'Dashboard\ErrorController@error403')
 					->name('errors.403');

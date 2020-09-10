@@ -11,4 +11,10 @@ class PatientRepository extends BaseRepository
 	{
 		return Patient::class;
 	}
+	
+	public function filter()
+	{
+		return Patient::whereRaw('LOWER(name) LIKE "%'.strtolower(request()->name).'%"')
+			->get();
+	}
 }

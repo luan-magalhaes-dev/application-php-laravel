@@ -14,6 +14,8 @@ interface PatientServiceInterface
 	
 	public function destroy($uuid);
 	
+	public function filter();
+	
 	public function flashNotFound();
 	
 	public function flashSuccessStore();
