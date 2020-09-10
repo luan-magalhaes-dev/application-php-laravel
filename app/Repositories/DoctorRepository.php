@@ -11,4 +11,10 @@ class DoctorRepository extends BaseRepository
 	{
 		return Doctor::class;
 	}
+	
+	public function filter()
+	{
+		return Doctor::whereRaw('LOWER(name) LIKE "%'.strtolower(request()->name).'%"')
+			->get();
+	}
 }

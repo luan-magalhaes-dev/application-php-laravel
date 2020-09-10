@@ -8,6 +8,8 @@ use App\Services\DoctorService;
 use App\Services\DoctorServiceInterface;
 use App\Services\PatientService;
 use App\Services\PatientServiceInterface;
+use App\Services\SchedulingService;
+use App\Services\SchedulingServiceInterface;
 use App\Services\UserService;
 use App\Services\UserServiceInterface;
 use Illuminate\Support\ServiceProvider;
@@ -32,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
 		$this->app->bind(AddressServiceInterface::class, AddressService::class);
 		$this->app->bind(DoctorServiceInterface::class, DoctorService::class);
 		$this->app->bind(PatientServiceInterface::class, PatientService::class);
+		$this->app->bind(SchedulingServiceInterface::class, SchedulingService::class);
 		$this->app->bind(UserServiceInterface::class, UserService::class);
 	}
 }

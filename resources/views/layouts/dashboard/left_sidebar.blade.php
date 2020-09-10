@@ -21,10 +21,16 @@
 					</div>
 				</div>
 			</li>
-			<li class="{{ menuActive(['home']) }}">
+			<li class="{{ menuActive(['']) }}">
 				<a href="{{ config('custom.url_panel') }}">
 					<em class="zmdi zmdi-home"></em>
 					<span>@lang('system.dashboard')</span>
+				</a>
+			</li>
+			<li class="{{ menuActive(['agendamentos']) }}">
+				<a href="{{ route('dashboard.schedules.index') }}">
+					<em class="zmdi zmdi-assignment-o"></em>
+					<span>@lang('system.scheduling')</span>
 				</a>
 			</li>
 			<li class="{{ menuActive(['pacientes']) }}">

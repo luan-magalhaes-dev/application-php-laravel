@@ -44,6 +44,41 @@ if (!function_exists('formatMask')) {
 		return $maskared;
 	}
 }
+if (!function_exists('daysWeek')) {
+	function daysWeek()
+	{
+		return [
+			[
+				'value' => 'Sunday',
+				'name'  => 'Domingo',
+			],
+			[
+				'value' => 'Monday',
+				'name'  => 'Segunda-Feira',
+			],
+			[
+				'value' => 'Tuesday',
+				'name'  => 'Terça-Feira',
+			],
+			[
+				'value' => 'Wednesday',
+				'name'  => 'Quarta-feira',
+			],
+			[
+				'value' => 'Thursday',
+				'name'  => 'Quinta-feira',
+			],
+			[
+				'value' => 'Friday',
+				'name'  => 'Sexta-feira',
+			],
+			[
+				'value' => 'Saturday',
+				'name'  => 'Sábado',
+			],
+		];
+	}
+}
 
 if (!function_exists('apiCall')) {
 	function apiCall($header, $url, $method = 'get', $parameters = false)
@@ -86,3 +121,4 @@ if (!function_exists('apiCall')) {
 		return $content;
 	}
 }
+
