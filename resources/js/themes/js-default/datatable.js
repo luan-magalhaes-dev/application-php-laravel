@@ -1,4 +1,5 @@
 $('.c_table').dataTable({
+    select: false,
     'language': {
         'lengthMenu': 'Exibindo _MENU_ registros por página',
         'zeroRecords': 'Nenhum registro encontrado',

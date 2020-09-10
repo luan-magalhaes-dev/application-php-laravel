@@ -14,7 +14,7 @@ class CreateSchedulingsTable extends Migration
 	{
 		Schema::table('doctors', function (Blueprint $table)
 		{
-			$table->json('schedules')
+			$table->text('schedules')
 				->nullable()
 				->after('crm');
 		});

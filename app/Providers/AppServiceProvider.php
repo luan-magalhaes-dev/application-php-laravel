@@ -12,6 +12,7 @@ use App\Services\SchedulingService;
 use App\Services\SchedulingServiceInterface;
 use App\Services\UserService;
 use App\Services\UserServiceInterface;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -36,5 +37,7 @@ class AppServiceProvider extends ServiceProvider
 		$this->app->bind(PatientServiceInterface::class, PatientService::class);
 		$this->app->bind(SchedulingServiceInterface::class, SchedulingService::class);
 		$this->app->bind(UserServiceInterface::class, UserService::class);
+		
+		Schema::defaultStringLength(191);
 	}
 }
